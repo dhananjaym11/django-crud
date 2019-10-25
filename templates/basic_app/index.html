@@ -1,0 +1,21 @@
+<H2>Home Page</H2>
+<h4>{{output}}</h4>
+
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ form }}
+    <div class="btn-container">
+        <input type="submit" class="theme-btn" value="Submit">
+    </div>
+</form>
+
+<ul>
+    {% for student in students %}
+    <li>
+        <span>Name: {{student.name}}</span>
+        &&
+        <span>Age: {{student.age}}</span>
+    </li>
+    {% endfor %}
+</ul>
